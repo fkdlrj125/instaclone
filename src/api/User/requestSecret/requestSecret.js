@@ -1,5 +1,6 @@
-import { generateSecret } from "../../../utils";
+import { generateSecret, sendSecretMail } from "../../../utils";
 import { prisma } from "../../../../generated/prisma-client";
+import { isConstructorDeclaration } from "typescript";
 
 export default {
   Mutation: {
@@ -8,6 +9,8 @@ export default {
       const loginSecret = generateSecret();
       console.log(loginSecret);
       try {
+        throw Error();
+        await sendSecretMail(email, loginSecret);
         await prisma.updateUser({ data: { loginSecret }, where: { email } });
         return true;
       } catch {
