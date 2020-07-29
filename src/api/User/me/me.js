@@ -13,5 +13,10 @@ export default {
         posts
       };
     }
+  },
+  User:{
+    fullName:(_,__,{request})=>{
+      
+    }
   }
 };
