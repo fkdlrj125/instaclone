@@ -4,6 +4,9 @@ type User {
   email:String! @unique
   firstName:String @default(value:"")
   lastName: String
+  fullName:String
+  isSelf:Boolean!
+  isFollowing:Boolean!
   bio:String
   followers:[User!]! @relation(name:"FollowRelation")
   following:[User!]! @relation(name:"FollowRelation")

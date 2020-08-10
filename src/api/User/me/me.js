@@ -14,9 +14,5 @@ export default {
       };
     }
   },
-  User:{
-    fullName:(_,__,{request})=>{
-      
-    }
-  }
+  
 };
